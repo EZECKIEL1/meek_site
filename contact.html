@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — MËËK</title>
+<link rel="icon" type="image/png" href="assets/meek-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">MËËK</a>
+  <ul class="nav-links">
+    <li><a href="index.html#collections">Collections</a></li>
+    <li><a href="index.html#produits">Produits</a></li>
+    <li><a href="index.html#marque">La Marque</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="cart-btn" id="cartToggle" aria-label="Ouvrir le panier">
+      🛍
+      <span class="cart-count" id="cartCount" data-empty="true">0</span>
+    </button>
+    <span class="nav-icon">☰</span>
+  </div>
+</nav>
+
+<section class="contact-section">
+  <div class="contact-box">
+    <p class="section-eyebrow">Nous Écrire</p>
+    <h2 class="section-title">Contactez<br><em>MËËK</em></h2>
+
+    <form id="contactForm" action="https://formsubmit.co/ezeckielmeek@gmail.com" method="POST" novalidate>
+      <input type="hidden" name="_subject" value="Nouveau message depuis le site MËËK">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="success.html">
+      <!-- Piège à robots (anti-spam), doit rester vide -->
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="form-group">
+        <label class="form-label" for="nom">Nom</label>
+        <input class="form-input" type="text" id="nom" name="nom" required>
+        <p class="form-error" id="err-nom"></p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="prenom">Prénom</label>
+        <input class="form-input" type="text" id="prenom" name="prenom" required>
+        <p class="form-error" id="err-prenom"></p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <input class="form-input" type="email" id="email" name="email" placeholder="exemple@gmail.com" required>
+        <p class="form-error" id="err-email"></p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" name="message" required></textarea>
+        <p class="form-error" id="err-message"></p>
+      </div>
+
+      <button type="submit" class="form-submit">Envoyer</button>
+    </form>
+
+    <a href="index.html" class="contact-back">← Retour à l'accueil</a>
+  </div>
+</section>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Panier">
+  <div class="cart-header">
+    <span class="cart-title">Votre Panier</span>
+    <button class="cart-close" id="cartClose" aria-label="Fermer le panier">×</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Votre panier est vide.</p>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-value" id="cartTotalValue">0 FCFA</span>
+    </div>
+    <a href="#" class="cart-whatsapp-btn" id="cartWhatsappBtn" target="_blank" rel="noopener">Commander via WhatsApp</a>
+    <p class="cart-note">Vous serez redirigé(e) vers WhatsApp avec le récapitulatif de votre commande pré-rempli.</p>
+  </div>
+</aside>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  // Validation côté client (reprend les règles du formulaire PHP d'origine)
+  const form = document.getElementById("contactForm");
+  const fields = {
+    nom: { regex: /^[A-Za-zÀ-ÖØ-öø-ÿ '-]{2,}$/, msg: "Le nom doit contenir au moins deux lettres." },
+    prenom: { regex: /^[A-Za-zÀ-ÖØ-öø-ÿ '-]{2,}$/, msg: "Le prénom doit contenir au moins deux lettres." },
+    email: { regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, msg: "Merci de saisir un email valide." },
+    message: { regex: /.+/, msg: "Ce champ ne doit pas être vide." },
+  };
+
+  form.addEventListener("submit", (e) => {
+    let valid = true;
+    Object.keys(fields).forEach((key) => {
+      const input = document.getElementById(key);
+      const errorEl = document.getElementById("err-" + key);
+      const value = input.value.trim();
+      if (!fields[key].regex.test(value)) {
+        errorEl.textContent = fields[key].msg;
+        valid = false;
+      } else {
+        errorEl.textContent = "";
+      }
+    });
+    if (!valid) e.preventDefault();
+  });
+</script>
+</body>
+</html>
