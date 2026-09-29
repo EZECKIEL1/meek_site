@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MËËK — Haute Mode</title>
+<meta name="description" content="MËËK, maison de mode luxe : prêt-à-porter, chaussures, maroquinerie et accessoires signature.">
+<link rel="icon" type="image/png" href="assets/meek-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">MËËK</a>
+  <ul class="nav-links">
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#produits">Produits</a></li>
+    <li><a href="#marque">La Marque</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="cart-btn" id="cartToggle" aria-label="Ouvrir le panier">
+      🛍
+      <span class="cart-count" id="cartCount" data-empty="true">0</span>
+    </button>
+    <span class="nav-icon">☰</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-pattern"></div>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Nouvelle Collection — 2025</p>
+      <h1 class="hero-title">L'Art de<br>la <em>Mode</em><br>Absolue</h1>
+      <p class="hero-subtitle">Une marque née de la passion. Chaque pièce porte en elle l'âme d'un artisan, la vision d'un créateur.</p>
+      <div class="hero-cta">
+        <a href="#collections" class="btn-primary">Découvrir</a>
+        <a href="#marque" class="btn-ghost">Notre Histoire</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-monogram"><img src="assets/meek-watermark.png" alt=""></div>
+      <div class="hero-badge">
+        <div class="hero-badge-inner">MËËK</div>
+        <div class="hero-badge-sub">MËËK · Mode · Luxe</div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Défiler</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Prêt-à-Porter</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Haute Couture</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Chaussures</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Maroquinerie</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Accessoires</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Parfumerie</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Prêt-à-Porter</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Haute Couture</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Chaussures</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Maroquinerie</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Accessoires</span><span class="marquee-dot">✦</span>
+    <span class="marquee-item">Parfumerie</span><span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- COLLECTIONS -->
+<section class="section" id="collections">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">Saison 2025</p>
+    <h2 class="section-title">Nos <em>Collections</em></h2>
+  </div>
+  <div class="collections-grid reveal">
+    <div class="collection-card">
+      <div class="card-visual">
+        <img src="assets/products/overshirt.jpg" alt="Collection vêtements MËËK" class="collection-photo">
+        <div class="card-overlay">
+          <span class="card-tag">Collection Signature</span>
+          <h3 class="card-name">Vêtements</h3>
+          <a href="#produits" class="card-link">Explorer la collection</a>
+        </div>
+      </div>
+    </div>
+    <div class="collection-card">
+      <div class="card-visual">
+        <img src="assets/products/sneakers.jpg" alt="Collection chaussures MËËK" class="collection-photo">
+        <div class="card-overlay">
+          <span class="card-tag">Footwear</span>
+          <h3 class="card-name">Chaussures</h3>
+          <a href="#produits" class="card-link">Explorer</a>
+        </div>
+      </div>
+    </div>
+    <div class="collection-card">
+      <div class="card-visual">
+        <img src="assets/products/tote.jpg" alt="Collection sacs et bagages MËËK" class="collection-photo">
+        <div class="card-overlay">
+          <span class="card-tag">Maroquinerie</span>
+          <h3 class="card-name">Sacs & Bagages</h3>
+          <a href="#produits" class="card-link">Explorer</a>
+        </div>
+      </div>
+    </div>
+    <div class="collection-card">
+      <div class="card-visual">
+        <img src="assets/products/cap.jpg" alt="Collection accessoires MËËK" class="collection-photo">
+        <div class="card-overlay">
+          <span class="card-tag">Accessories</span>
+          <h3 class="card-name">Accessoires</h3>
+          <a href="#produits" class="card-link">Explorer</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO SECTION -->
+<section class="logo-section" id="logo">
+  <div class="logo-display reveal">
+    <div class="logo-glow"></div>
+    <img src="assets/meek-logo.png" alt="Logo MËËK" class="logo-img">
+  </div>
+  <div class="logo-info reveal">
+    <p class="section-eyebrow">L'Identité Visuelle</p>
+    <h2 class="section-title">Le Logo<br><em>Signature</em></h2>
+    <p class="logo-description">Notre monogramme est plus qu'un simple logo — c'est un symbole d'excellence, présent sur chaque pièce de notre maison. Habits, chaussures, sacs, accessoires : la signature MËËK garantit l'authenticité.</p>
+    <div class="logo-features">
+      <div class="logo-feature">
+        <div class="feature-icon">👕</div>
+        <div class="feature-text">
+          <div class="feature-title">Prêt-à-Porter</div>
+          Brodé, imprimé ou en relief sur tous nos vêtements
+        </div>
+      </div>
+      <div class="logo-feature">
+        <div class="feature-icon">👟</div>
+        <div class="feature-text">
+          <div class="feature-title">Footwear</div>
+          Gravé sur les semelles et sur le cuir de nos chaussures
+        </div>
+      </div>
+      <div class="logo-feature">
+        <div class="feature-icon">👜</div>
+        <div class="feature-text">
+          <div class="feature-title">Maroquinerie</div>
+          Estampillé à chaud sur cuir pleine fleur de nos sacs
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUITS -->
+<section class="section" id="produits">
+  <div class="section-header reveal">
+    <p class="section-eyebrow">Bestsellers</p>
+    <h2 class="section-title">Pièces <em>Iconiques</em></h2>
+  </div>
+  <div class="products-grid reveal">
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/jacket.jpg" alt="Veste MËËK Monogram bleu marine" class="product-photo">
+        <div class="product-badge">Nouveau</div>
+        <button class="product-add" data-add-to-cart data-id="veste-monogram" data-name="MËËK Monogram Jacket" data-price="320000">Ajouter au panier</button>
+      </div>
+      <div class="product-category">Veste Signature</div>
+      <div class="product-name">MËËK Monogram Jacket</div>
+      <div class="product-price">320 000 FCFA</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/sneakers.jpg" alt="Sneakers MËËK cuir blanc" class="product-photo">
+        <div class="product-badge">Icône</div>
+        <button class="product-add" data-add-to-cart data-id="sneakers-lowtop" data-name="MËËK Low-Top Cuir" data-price="185000">Ajouter au panier</button>
+      </div>
+      <div class="product-category">Sneakers Premium</div>
+      <div class="product-name">MËËK Low-Top Cuir</div>
+      <div class="product-price">185 000 FCFA</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/tote.jpg" alt="Sac Tote MËËK cuir noir" class="product-photo">
+        <div class="product-badge">Exclusif</div>
+        <button class="product-add" data-add-to-cart data-id="tote-monogram" data-name="MËËK Tote Monogram" data-price="240000">Ajouter au panier</button>
+      </div>
+      <div class="product-category">Sac Tote</div>
+      <div class="product-name">MËËK Tote Monogram</div>
+      <div class="product-price">240 000 FCFA</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/cap.jpg" alt="Casquette MËËK noire et or" class="product-photo">
+        <button class="product-add" data-add-to-cart data-id="cap-signature" data-name="MËËK Cap Signature" data-price="55000">Ajouter au panier</button>
+      </div>
+      <div class="product-category">Accessoire</div>
+      <div class="product-name">MËËK Cap Signature</div>
+      <div class="product-price">55 000 FCFA</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/bucket-hat.jpg" alt="MËËK Bucket Hat noir et blanc" class="product-photo">
+        <div class="product-badge">Nouveau</div>
+        <button class="product-add" data-add-to-cart data-id="bucket-hat" data-name="MËËK Bucket Hat" data-price="45000">Ajouter au panier</button>
+      </div>
+      <div class="product-category">Accessoire</div>
+      <div class="product-name">MËËK Bucket Hat</div>
+      <div class="product-price">45 000 FCFA</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/tshirt.jpg" alt="T-shirt MËËK blanc" class="product-photo">
+        <div class="product-badge">Nouveau</div>
+        <button class="product-add" data-add-to-cart data-id="tshirt-signature" data-name="MËËK T-Shirt Signature" data-price="48000">Ajouter au panier</button>
+      </div>
+      <div class="product-category">Prêt-à-Porter</div>
+      <div class="product-name">MËËK T-Shirt Signature</div>
+      <div class="product-price">48 000 FCFA</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/beanie.jpg" alt="Bonnets MËËK beige, noir et blanc" class="product-photo">
+        <div class="product-badge">Nouveau</div>
+        <button class="product-add" data-add-to-cart data-id="bonnet-signature" data-name="MËËK Bonnet Signature" data-price="38000">Ajouter au panier</button>
+      </div>
+      <div class="product-category">Accessoire</div>
+      <div class="product-name">MËËK Bonnet Signature</div>
+      <div class="product-price">38 000 FCFA</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/overshirt.jpg" alt="Surchemise MËËK rouille avec monogramme MK" class="product-photo">
+        <div class="product-badge">Nouveau</div>
+        <button class="product-add" data-add-to-cart data-id="surchemise-rouille" data-name="MËËK Surchemise Rouille" data-price="150000">Ajouter au panier</button>
+      </div>
+      <div class="product-category">Prêt-à-Porter</div>
+      <div class="product-name">MËËK Surchemise Rouille</div>
+      <div class="product-price">150 000 FCFA</div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+        <img src="assets/products/ring.jpg" alt="Chevalière MËËK or et onyx noir" class="product-photo">
+        <div class="product-badge">Exclusif</div>
+        <button class="product-add" data-add-to-cart data-id="chevaliere-signature" data-name="MËËK Chevalière Signature" data-price="95000">Ajouter au panier</button>
+      </div>
+      <div class="product-category">Joaillerie</div>
+      <div class="product-name">MËËK Chevalière Signature</div>
+      <div class="product-price">95 000 FCFA</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="marque">
+  <div class="about-visual reveal">
+    <div class="about-frame">
+      <div class="about-frame-letter">
+        <img src="assets/meek-watermark.png" alt="" class="about-frame-img">
+      </div>
+      <div class="about-frame-content">
+        <span class="big-letter">MËËK</span>
+        <p class="ms">Maison de Mode</p>
+      </div>
+    </div>
+    <div class="about-accent">
+      <span>Fondé<br>en<br>2025</span>
+    </div>
+  </div>
+  <div class="about-text reveal">
+    <p class="section-eyebrow">Notre Histoire</p>
+    <h2 class="section-title">Une <em>Vision</em>,<br>une Marque</h2>
+    <p>Née d'une passion profonde pour la mode, MËËK est une marque qui croit que le style n'a pas de frontières. Chaque création est pensée pour durer, pour marquer les esprits.</p>
+    <p>Notre logo, conçu avec soin, est bien plus qu'un signe distinctif — c'est une promesse de qualité, d'originalité et d'élégance intemporelle. Comme les plus grandes maisons du monde, il sera reconnu partout.</p>
+    <a href="contact.html" class="btn-primary" style="display: inline-block; margin-top: 20px;">Découvrir l'histoire</a>
+    <div class="about-stats">
+      <div>
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Fait avec passion</span>
+      </div>
+      <div>
+        <span class="stat-number">∞</span>
+        <span class="stat-label">Pièces à venir</span>
+      </div>
+      <div>
+        <span class="stat-number">1</span>
+        <span class="stat-label">Vision unique</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <p class="section-eyebrow reveal" style="text-align:center">Restez Informé</p>
+  <h2 class="section-title reveal" style="text-align:center">Rejoignez <em>l'Univers</em> MËËK</h2>
+  <p class="newsletter-sub reveal">Soyez les premiers informés des nouvelles collections et événements exclusifs</p>
+  <form class="newsletter-form reveal" id="newsletterForm" action="https://formsubmit.co/ezeckielmeek@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="Nouvelle inscription newsletter MËËK">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="email" name="email" id="newsletterEmail" class="newsletter-input" placeholder="Votre adresse e-mail" required>
+    <button type="submit" class="newsletter-btn">S'abonner</button>
+  </form>
+  <p class="newsletter-msg" id="newsletterMsg"></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <a href="index.html" class="nav-logo">MËËK</a>
+    <p>Une marque de mode luxe née de la passion créatrice. Du vêtement à l'accessoire, l'âme MËËK sur chaque pièce.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Collections</h4>
+    <ul>
+      <li><a href="#collections">Vêtements</a></li>
+      <li><a href="#collections">Chaussures</a></li>
+      <li><a href="#collections">Sacs</a></li>
+      <li><a href="#collections">Accessoires</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>La Marque</h4>
+    <ul>
+      <li><a href="#marque">Notre Histoire</a></li>
+      <li><a href="#marque">Savoir-faire</a></li>
+      <li><a href="contact.html">Presse</a></li>
+      <li><a href="contact.html">Carrières</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Service</h4>
+    <ul>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html">Livraisons</a></li>
+      <li><a href="contact.html">Retours</a></li>
+      <li><a href="contact.html">FAQ</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2025 MËËK — Tous droits réservés</span>
+  <span>Confidentialité · CGV · Mentions légales</span>
+</div>
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Panier">
+  <div class="cart-header">
+    <span class="cart-title">Votre Panier</span>
+    <button class="cart-close" id="cartClose" aria-label="Fermer le panier">×</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Votre panier est vide.</p>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span class="cart-total-label">Total</span>
+      <span class="cart-total-value" id="cartTotalValue">0 FCFA</span>
+    </div>
+    <a href="#" class="cart-whatsapp-btn" id="cartWhatsappBtn" target="_blank" rel="noopener">Commander via WhatsApp</a>
+    <p class="cart-note">Vous serez redirigé(e) vers WhatsApp avec le récapitulatif de votre commande pré-rempli.</p>
+  </div>
+</aside>
+
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
