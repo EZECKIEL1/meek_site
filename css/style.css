@@ -273,71 +273,127 @@ nav.scrolled {
 }
 .section-title em { font-style: italic; color: var(--gold); }
 
-/* COLLECTIONS */
-.collections-grid {
-  display: grid; grid-template-columns: 1fr 1fr 1fr;
-  gap: 2px;
+
+/* COLLECTIONS — 4 images de même taille */
+#collections .collections-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
 }
-.collection-card {
-  position: relative; overflow: hidden;
-  aspect-ratio: 2/3;
-  background: #1a1a1a;
-  cursor: none;
-}
-.collection-card:first-child { grid-row: span 2; aspect-ratio: auto; }
-.card-visual {
-  width: 100%; height: 100%;
-  display: flex; align-items: center; justify-content: center;
+
+#collections .collection-card,
+#collections .collection-card:first-child {
   position: relative;
-  transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+  width: 100%;
+  height: clamp(280px, 32vw, 420px);
+  min-width: 0;
+  aspect-ratio: auto;
+  grid-row: auto;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #171614;
+  isolation: isolate;
 }
-.collection-card:hover .card-visual { transform: scale(1.05); }
-.card-bg {
-  position: absolute; inset: 0;
-  transition: opacity 0.4s;
-}
-.card-bg-1 { background: linear-gradient(145deg, #1c1c1c 0%, #2a2a2a 50%, #111 100%); }
-.card-bg-2 { background: linear-gradient(145deg, #1a1410 0%, #2a2010 100%); }
-.card-bg-3 { background: linear-gradient(145deg, #10141a 0%, #10202a 100%); }
-.card-bg-4 { background: linear-gradient(145deg, #1a1018 0%, #2a1020 100%); }
 
-.card-symbol {
-  position: relative; z-index: 1;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 120px; font-style: italic; font-weight: 300;
-  color: rgba(201,168,76,0.15);
-  transition: all 0.4s;
+#collections .card-visual {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-.collection-card:hover .card-symbol { color: rgba(201,168,76,0.25); }
 
-.card-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 60%);
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 32px;
+#collections .collection-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .7s ease;
 }
-.card-tag {
-  font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 8px; opacity: 0.8;
+
+#collections .collection-card:hover .collection-photo {
+  transform: scale(1.055);
 }
-.card-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px; font-weight: 300; color: var(--white);
-  margin-bottom: 16px;
+
+#collections .card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: clamp(14px, 2vw, 28px);
+  background: linear-gradient(
+    to top,
+    rgba(8,8,8,.88),
+    transparent 65%
+  );
 }
-.card-link {
-  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--cream); text-decoration: none;
-  display: flex; align-items: center; gap: 10px;
-  opacity: 0; transform: translateY(10px);
-  transition: all 0.4s ease;
+
+#collections .card-tag {
+  letter-spacing: 2.5px;
+  line-height: 1.5;
 }
-.collection-card:hover .card-link { opacity: 1; transform: translateY(0); }
-.card-link::after {
-  content: '→';
-  transition: transform 0.3s;
+
+#collections .card-name {
+  font-size: clamp(20px, 2vw, 30px);
+  line-height: 1.1;
+  margin-bottom: 12px;
 }
-.collection-card:hover .card-link::after { transform: translateX(4px); }
+
+#collections .card-link {
+  flex-wrap: wrap;
+  line-height: 1.6;
+}
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  #collections .collections-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  #collections .collection-card,
+  #collections .collection-card:first-child {
+    height: clamp(250px, 48vw, 360px);
+  }
+}
+
+/* Téléphones */
+@media (max-width: 480px) {
+  #collections .collections-grid {
+    gap: 10px;
+  }
+
+  #collections .collection-card,
+  #collections .collection-card:first-child {
+    height: 245px;
+  }
+
+  #collections .card-overlay {
+    padding: 12px;
+  }
+
+  #collections .card-tag {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  #collections .card-name {
+    font-size: 19px;
+  }
+
+  #collections .card-link {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+}
+
+
+
+
+
 
 /* LOGO SECTION */
 .logo-section {
